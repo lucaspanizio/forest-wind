@@ -1,0 +1,21 @@
+{
+  "name": "forest-wind",
+  "type": "module",
+  "version": "1.0.0",
+  "author": "José Lucas Panizio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucaspanizio/forest-wind.git"
+  },
+  "homepage": "https://lucaspanizio.github.io/forest-wind",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.12.9",
+    "tailwindcss": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11"
+  }
+}

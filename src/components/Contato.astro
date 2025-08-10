@@ -1,0 +1,62 @@
+<section id="contato" class="container mb-12 sm:mb-16 grid lg:grid-cols-2 gap-8">
+	<div>
+		<h1 class="font-serif text-4xl text-green-300 mb-4">Nossos Contatos</h1>
+		<p class="text-gray-200 text-balance mb-8">
+			Tem interesse em passar uma temporada na Forest? Entre em contato com
+			a gente por telefone ou email.
+		</p>
+		<div class="grid gap-4">
+			<div>
+				<span class="h-0.5 w-6 neon inline-block"></span>
+				<h2 class="mb-2 text-2xl text-green-300 font-serif">Base</h2>
+				<p class="text-gray-300">
+					Rua da Mata, 123 - Floresta Nacional - RJ
+				</p>
+			</div>
+
+			<div>
+				<span class="h-0.5 w-6 neon inline-block"></span>
+				<h2 class="mb-2 text-2xl text-green-300 font-serif">Email</h2>
+				<p class="text-gray-300">contato@forestwind.com</p>
+			</div>
+
+			<div>
+				<span class="h-0.5 w-6 neon inline-block"></span>
+				<h2 class="mb-2 text-2xl text-green-300 font-serif">Telefone</h2>
+				<p class="text-gray-300">21 9999-9999</p>
+			</div>
+		</div>
+	</div>
+	<form class="grid gap-4 rounded-xl bg-green-900 shadow-2xl p-4 lg:p-8">
+		<div class="grid gap-1">
+			<label class="text-white" for="nome">Nome</label>
+			<input id="nome" name="nome" class="input" type="text" />
+		</div>
+		<div class="grid gap-4 sm:grid-cols-2">
+			<div class="grid gap-1">
+				<label class="text-white" for="email">Email</label>
+				<input id="email" name="email" class="input" type="email" />
+			</div>
+			<div class="grid gap-1">
+				<label class="text-white" for="telefone">Telefone</label>
+				<input
+					id="telefone"
+					type="text"
+					name="telefone"
+					class="input"
+					placeholder="(21) 99999-9999"
+				/>
+			</div>
+		</div>
+		<div class="grid gap-1">
+			<label class="text-white" for="mensagem">Mensagem</label>
+			<textarea			  
+				id="mensagem"
+				name="mensagem"
+				rows="5"
+				class="input resize-none"
+			/>
+		</div>
+		<button class="place-self-start btn">Enviar Email</button>
+	</form>
+</section>

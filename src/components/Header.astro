@@ -1,0 +1,81 @@
+---
+const randomTemp = Math.floor(Math.random() * 10) + 20;
+---
+
+<div class="container mt-4 flex justify-center md:justify-start">
+	<div class="inline-flex items-center rounded-md bg-green-900">
+		<span class="neon size-2 block relative -left-1"></span>
+		<div class="flex text-green-300 divide-x-2 divide-green-800">
+			<div class="px-4 py-2 capitalize" id="dia">segunda</div>
+			<div class="px-4 py-2" id="temperatura" data-temp={randomTemp}>{`${randomTemp}º`}</div>
+			<div class="px-4 py-2" id="tempo">🌤️</div>
+		</div>
+	</div>
+</div>
+
+<header class="container flex items-center justify-between gap-8 py-8">
+	<a href="./">
+		<h1 class="text-white font-serif text-5xl tracking-wide">Forest Wind</h1>
+	</a>
+	<nav id="mobile-menu" class="lg:block hidden items-center z-40 max-lg:fixed max-lg:w-full max-lg:inset-0">
+		<div class="fixed lg:hidden inset-0 bg-green-950/40 backdrop-blur-md"/>
+		<ul	class="text-white text-2xl max-lg:divide-y-2 max-lg:divide-white/10 max-lg:z-50 max-lg:absolute max-lg:p-8 max-lg:w-full lg:text-xl lg:flex lg:flex-wrap lg:gap-8">
+			<li class="animate-slide-in opacity-0 animate-1">
+				<a class="p-4 lg:px-0 lg:py-2 block max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8" href="#acomodacoes">Acomodações</a>
+			</li>
+			<li class="animate-slide-in opacity-0 animate-2">
+				<a class="p-4 lg:px-0 lg:py-2 block max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8"
+					href="#eventos">Eventos</a>
+			</li>
+			<li class="animate-slide-in opacity-0 animate-3">
+				<a class="p-4 lg:px-0 lg:py-2 block max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8"	href="#experiencias">Experiências</a>
+			</li>
+			<li class="animate-slide-in opacity-0 animate-4">
+				<a class="p-4 lg:px-0 lg:py-2 block max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8" href="#contato">Contato</a>
+			</li>
+		</ul>
+	</nav>
+
+	<button id="mobile-button" class="btn flex items-center gap-3 text-green-900 py-1 rounded-full lg:hidden">
+		Menu
+		<span	class="h-3 w-4 flex flex-col justify-between *:h-0.5 *:rounded-md *:bg-green-800">
+			<span></span>
+			<span></span>
+			<span></span>
+		</span>
+	</button>
+</header>
+
+<script>
+  const temperatura = document.getElementById('temperatura');
+  const tempo = document.getElementById('tempo');
+  const dia = document.getElementById('dia');
+
+  const randomTemp = temperatura?.dataset.temp ? parseInt(temperatura.dataset.temp) : null;
+  if (randomTemp !== null) {
+    if (temperatura) temperatura.innerText = `${randomTemp}º`;
+    if (tempo) tempo.innerText = randomTemp < 25 ? `🌧️ ${randomTemp + 5}%` : `🌤️`;
+  }
+
+  const date = new Date();
+  if (dia) {
+    dia.innerText = date
+      .toLocaleDateString('pt-BR', { weekday: 'long' })
+      .replace('-feira', '');
+  }
+
+  const mobileButton = document.getElementById('mobile-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileButton && mobileMenu) {
+    mobileButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+
+    mobileMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+    });
+  }
+</script>

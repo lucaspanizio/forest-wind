@@ -1,0 +1,59 @@
+---
+import casa1 from '../assets/img/casa1.jpg';
+import casa2 from '../assets/img/casa2.jpg';
+import casa3 from '../assets/img/casa3.jpg';
+---
+
+<section id="acomodacoes" class="radial-gradient container grid lg:grid-cols-[2fr_3fr] gap-8 pt-16 mb-12 sm:mb-16">
+	<div class="content-end bg-[url('./src/assets/img/padrao.svg')] bg-no-repeat bg-contain bg-left-bottom xs:bg-right-bottom">
+		<h2 class="text-white mb-8 text-4xl font-serif lg:text-5xl">
+			Refúgio Natural
+		</h2>
+		<ul class="text-gray-200 *:flex *:items-center *:gap-4 grid gap-4 sm:text-xl">
+			<li>
+				<span class="h-0.5 w-6 neon inline-block"></span>Experimente a natureza de perto
+			</li>
+			<li>
+				<span class="h-0.5 w-6 neon inline-block"></span>Conecte-se com a natureza
+			</li>
+			<li>
+				<span class="h-0.5 w-6 neon inline-block"></span>Desconecte-se do digital
+			</li>
+			<li>
+				<span class="h-0.5 w-6 neon inline-block"></span>Observe a vida selvagem
+			</li>
+			<li>
+				<span class="h-0.5 w-6 neon inline-block"></span>Escolha a sua cabine preferida
+			</li>
+		</ul>
+	</div>
+	<div class="grid grid-cols-[2fr_1fr] gap-4 sm:gap-8">
+		<div class="col-span-full grid *:col-start-1 *:row-start-1">
+			<img
+				class="h-52 w-full object-cover rounded-xl"
+				src={casa1.src} width={casa1.width} height={casa1.height}
+				alt="Casa 1"
+			/>
+			<span class="m-2 self-start justify-self-end uppercase text-white rounded-full bg-green-950/60 px-4 py-2 text-sm/none"
+				>Ruby</span
+			>
+		</div>
+		<div class="grid *:col-start-1 *:row-start-1">
+			<img
+				class="size-full object-cover rounded-xl"
+				src={casa2.src} width={casa2.width} height={casa2.height}
+				alt="Casa 2"
+			/>
+			<span class="m-2 self-start justify-self-end uppercase text-white rounded-full bg-green-950/60 px-4 py-2 text-sm/none">Emerald</span
+			>
+		</div>
+		<div class="grid *:col-start-1 *:row-start-1">
+			<img
+				class="size-full object-cover rounded-xl"
+				src={casa3.src} width={casa3.width} height={casa3.height}
+				alt="Casa 3"
+			/>
+			<span class="m-2 self-start justify-self-end uppercase text-white rounded-full bg-green-950/60 px-4 py-2 text-sm/none">Saphire</span>
+		</div>
+	</div>
+</section>

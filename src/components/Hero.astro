@@ -1,0 +1,44 @@
+---
+import seta from '../assets/img/seta.svg';
+import wildbeast from '../assets/img/parceiros/wildbeast.svg';
+---
+
+<main class="container">
+	<div class="relative px-8 pb-8 pt-64 bg-gradient-to-t from-green-950/80 text-white rounded-2xl overflow-hidden max-sm:px-4 max-sm:pt-12">
+		<video id="video" class="absolute inset-0 size-full object-cover -z-10 animate-fade-in" muted autoplay playsinline 	loop width="1280" height="720" src=""/>
+		<div class="bg-green-950/60 rounded-xl flex flex-col items-start gap-2 p-4 mb-8 sm:gap-8 sm:items-center sm:py-1 sm:pl-4 sm:pr-1 sm:bg-green-950 sm:inline-flex sm:flex-row sm:rounded-full">
+			Vagas abertas para dezembro
+			<a class="btn inline-flex items-center gap-2" href="#contato">
+				Reserve já
+				<img src={seta.src} width={seta.width} height={seta.height} alt="" />
+			</a>
+		</div>
+		<h1 class="mb-8 font-serif text-balance max-w-screen-sm text-4xl sm:mb-20 sm:text-5xl capitalize">
+			Venha experimentar a vida na floresta
+		</h1>
+		<div class="text-sm sm:flex justify-between items-end">
+			<p class="max-sm:mb-4">
+				Melhores locais para visitar
+				<a class="underline decoration-2 underline-offset-4 hover:no-underline" href="./">2049</a>
+			</p>
+			<div>
+				<p class="uppercase mb-2">Recomendado por</p>
+				<p class="flex items-center gap-4">
+					<img class="w-28"	src={wildbeast.src} width={wildbeast.width} height={wildbeast.height} alt="Wildbeast"	/>
+					<span>|</span>
+					Revista Nacional
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
+
+<script>
+	const video = document.getElementById('video') as HTMLVideoElement;
+	const temperatura = document.getElementById('temperatura');
+
+  const randomTemp = temperatura?.dataset.temp ? parseInt(temperatura.dataset.temp) : null;	
+  if (randomTemp !== null && video) {
+		video.src = randomTemp < 25 ? '/src/assets/videos/chuva.mp4' : '/src/assets/videos/sol.mp4';
+  }
+</script>
