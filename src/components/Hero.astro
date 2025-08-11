@@ -1,6 +1,6 @@
 ---
-import seta from '../assets/img/seta.svg';
 import wildbeast from '../assets/img/parceiros/wildbeast.svg';
+import seta from '../assets/img/seta.svg';
 ---
 
 <main class="container">
@@ -39,6 +39,6 @@ import wildbeast from '../assets/img/parceiros/wildbeast.svg';
 
   const randomTemp = temperatura?.dataset.temp ? parseInt(temperatura.dataset.temp) : null;	
   if (randomTemp !== null && video) {
-		video.src = randomTemp < 25 ? '/src/assets/videos/chuva.mp4' : '/src/assets/videos/sol.mp4';
+		video.src = randomTemp < 25 ? './videos/chuva.mp4' : './videos/sol.mp4';
   }
 </script>
